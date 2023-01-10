@@ -1,17 +1,21 @@
+from food import Food
+
 class Snake:
     def __init__(self):
-        self.length = 1
-        self.head_posX = 4
-        self.head_posY = 8
-        self.move_dir = "none"
-        self.body = []
+        self.length: int = 1
+        self.head_posX: int = 4
+        self.head_posY: int = 8
+        self.move_dir: string = "none"
+        self.body: list[tuple] = []
     
-    def is_colliding_with_body(self):
-        pos = (self.head_posX, self.head_posY)
+    def is_colliding_with_body(self) -> bool:
         for i in body:
-            if pos == i:
+            if (self.head_posX, self.head_posY) == i:
                 return True
         return False
+    
+    def is_colliding_with_food(self, f: Food) -> bool:
+        return (self.head_posX, self.head_posY) == (f.posX, f.posY)
     
     def update(self):
         if self.move_dir == "left":
