@@ -26,3 +26,4 @@ class Snake:
             self.head_posY -= 1
         elif self.move_dir == "down":
             self.head_posY += 1
+        
